@@ -1,0 +1,442 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Weather Icon Demo</title>
+  <meta name="description" content="Multicolour Weather Icons">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/weather-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script>
+   window.onload = function(event) {
+    let myModal = new bootstrap.Modal(document.getElementById('iconModal'), {});
+
+    document.querySelectorAll("button.icon-button").forEach((button) => {
+      button.addEventListener("click",() => {
+        let name = button.querySelector('p').innerHTML
+        let shortName = button.querySelector('p').innerHTML.replace(/wi-|-day|-night/g,'')
+        let hexCode = button.querySelector('p').getAttribute('title')
+
+        document.querySelectorAll("input.icon-colour").forEach((checkbox) => {
+          checkbox.checked = false
+        })
+        document.querySelector('.modal-title > h1').innerHTML = shortName
+        document.querySelector('.modal-title > p').innerHTML = hexCode
+        document.querySelector('.icon-card').innerHTML = '<i class="wi-multitone ' + name  + '"><i></i></i>'
+        document.querySelector('.icon-code').innerHTML = document.querySelector('.icon-card').innerHTML
+        myModal.show()
+      })
+    });
+
+    document.querySelectorAll("input.icon-colour").forEach((button) => {
+      button.addEventListener("change",() => {
+        let colour = button.dataset.colour
+        document.querySelector('.icon-card > i').classList.toggle(colour)
+        document.querySelector('.icon-code').innerHTML = document.querySelector('.icon-card').innerHTML
+      })
+    });
+
+    document.querySelectorAll(".icon-mode").forEach((button) => {
+      button.addEventListener("click",() => {
+        document.querySelectorAll(".icon-mode").forEach((button) => {
+            button.classList.remove('active', 'focus')
+        })
+        button.classList.add('active', 'focus')
+        if (button.dataset.class === 'single') {
+          document.querySelector('.icon-card > i').classList.remove('wi-multitone')
+          document.querySelector('.icon-card > i').innerHTML = ''
+
+        } else {
+          document.querySelector('.icon-card > i').classList.add('wi-multitone')
+          document.querySelector('.icon-card > i').innerHTML = "<i></i>"
+        }
+        document.querySelector('.icon-code').innerHTML = document.querySelector('.icon-card').innerHTML
+
+      })
+    });
+
+    document.querySelector('.icon-code').addEventListener('click', (textarea) => {
+      console.log(textarea)
+    // getting the text content that we want to copy
+    const content = textarea.target.textContent;    // loading the content into our clipboard
+    navigator.clipboard.writeText(content);
+})
+
+  };
+  </script>
+
+
+
+</head>
+<body>
+  <!-- Modal -->
+  <div class="modal fade" id="iconModal" tabindex="-1" role="dialog" aria-labelledby="iconModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="icon-mode btn btn-secondary active" data-class="multi">
+              <input type="radio" name="options" id="option1" autocomplete="off" checked>Multicolour
+            </label>
+            <label class="icon-mode btn btn-secondary" data-class="single">
+              <input type="radio" name="options" id="option2" autocomplete="off">Single Colour
+            </label>
+          </div>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body row m-2">
+          <div class="col-12 modal-title d-flex justify-content-between">
+            <h1 id="iconModalLabel" title="Icon hex code"></h1>
+            <p class="icon-hex-code pt-2" title="Icon hex code"></p>
+          </div>
+          <div class="col-6">
+            <div class="icon-card p-4 d-flex flex-column align-items-center justify-content-center rounded"></div>
+          </div>
+          <div class="col-6 d-flex flex-column justify-content-start">
+            <div class="row mb-2 gx-0 justify-content-between">
+              <p>In order of precedence:</p>
+            </div>
+          <div class="row mb-2 gx-0 justify-content-between">
+            <span class="col-9  text-end">Yellow accents</span>
+            <label class="switch bg-info col-3">
+              <input class="icon-colour" data-colour="wi-yellow" type="checkbox">
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="row mb-1 gx-0 justify-content-between">
+            <span class="col-9  text-end">Grey accents</span>
+            <label class="switch bg-info col-3">
+              <input class="icon-colour" data-colour="wi-grey" type="checkbox">
+              <span class="slider"></span>
+            </label>
+          </div>
+            <div class="row mb-1 gx-0 justify-content-between">
+              <span class="col-9  text-end">Red accents</span>
+              <label class="switch bg-info col-3">
+                <input class="icon-colour" data-colour="wi-red" type="checkbox">
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="row mb-1 gx-0 justify-content-between">
+              <span class="col-9  text-end">Blue accents</span>
+              <label class="switch bg-info col-3">
+                <input class="icon-colour" data-colour="wi-blue" type="checkbox">
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="row mb-1 gx-0 justify-content-between">
+              <span class="col-9  text-end">White accents</span>
+              <label class="switch bg-info col-3">
+                <input class="icon-colour" data-colour="wi-white" type="checkbox">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+          <div class="col-12 mt-4">
+            <textarea class="icon-code p-4 w-100 rounded border-0 bg-dark text-white" title="Click to copy to clipboard"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <h1>Weather Icons</h1>
+    <div class="grid">
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-clear-day"></i>
+          <p title="\f030" class="icon-name">wi-clear-day</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-few-clouds-day"></i>
+          <p title="\f031" class="icon-name">wi-few-clouds-day</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-scattered-clouds-day"></i>
+          <p title="\f032" class="icon-name">wi-scattered-clouds-day</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-shower-rain-day"></i>
+          <p title="\f035" class="icon-name">wi-shower-rain-day</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-clear-night"></i>
+          <p title="\f03b" class="icon-name">wi-clear-night</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-few-clouds-night"></i>
+          <p title="\f03c" class="icon-name">wi-few-clouds-night</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-scattered-clouds-night"></i>
+          <p title="\f03d" class="icon-name">wi-scattered-clouds-night</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-shower-rain-night"></i>
+          <p title="\f03e" class="icon-name">wi-shower-rain-night</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-broken-clouds"></i>
+          <p title="\f034" class="icon-name">wi-broken-clouds</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-rain"></i>
+          <p title="\f036" class="icon-name">wi-rain</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-thunderstorm"></i>
+          <p title="\f037" class="icon-name">wi-thunderstorm</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-snow"></i>
+          <p title="\f039" class="icon-name">wi-snow</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-pressure"></i>
+          <p title="\f060" class="icon-name">wi-pressure</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-thermometer"></i>
+          <p title="\f061" class="icon-name">wi-thermometer</p>
+        </button>
+      </article>
+    </div>
+    <h1>Wind Direction Icons</h1>
+    <div class="grid">
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-wind"></i>
+          <p title="\f070" class="icon-name">wi-wind</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-wind-sw"></i>
+          <p title="\f071" class="icon-name">wi-wind-sw</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-wind-w"></i>
+          <p title="\f071" class="icon-name">wi-wind-w</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-wind-nw"></i>
+          <p title="\f073" class="icon-name">wi-wind-nw</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-wind-n"></i>
+          <p title="\f074" class="icon-name">wi-wind-n</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-wind-ne"></i>
+          <p title="\f075" class="icon-name">wi-wind-ne</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-wind-e"></i>
+          <p title="\f076" class="icon-name">wi-wind-e</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-wind-se"></i>
+          <p title="\f077" class="icon-name">wi-wind-se</p>
+        </button>
+      </article>
+    </div>
+    <h1>Time of Day Icons</h1>
+    <div class="grid">
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-tod-0"></i>
+          <p title="\f000" class="icon-name">wi-tod-0</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-tod-1"></i>
+          <p title="\f001" class="icon-name">wi-tod-1</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-tod-2"></i>
+          <p title="\f002" class="icon-name">wi-tod-2</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-tod-3"></i>
+          <p title="\f003" class="icon-name">wi-tod-3</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-tod-4"></i>
+          <p title="\f004" class="icon-name">wi-tod-4</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-tod-5"></i>
+          <p title="\f005" class="icon-name">wi-tod-5</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-tod-6"></i>
+          <p title="\f006" class="icon-name">wi-tod-6</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-tod-7"></i>
+          <p title="\f007" class="icon-name">wi-tod-7</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-tod-8"></i>
+          <p title="\f008" class="icon-name">wi-tod-8</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-tod-9"></i>
+          <p title="\f009" class="icon-name">wi-tod-9</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-tod-10"></i>
+          <p title="\f00a" class="icon-name">wi-tod-10</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-tod-11"></i>
+          <p title="\f00b" class="icon-name">wi-tod-11</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-tod-12"></i>
+          <p title="\f010" class="icon-name">wi-tod-12</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-tod-13"></i>
+          <p title="\f011" class="icon-name">wi-tod-13</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-tod-14"></i>
+          <p title="\f012" class="icon-name">wi-tod-14</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-tod-15"></i>
+          <p title="\f013" class="icon-name">wi-tod-15</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-tod-16"></i>
+          <p title="\f014" class="icon-name">wi-tod-16</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-tod-17"></i>
+          <p title="\f015" class="icon-name">wi-tod-17</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-tod-18"></i>
+          <p title="\f016" class="icon-name">wi-tod-18</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-tod-19"></i>
+          <p title="\f017" class="icon-name">wi-tod-19</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-tod-20"></i>
+          <p title="\f018" class="icon-name">wi-tod-20</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-tod-21"></i>
+          <p title="\f019" class="icon-name">wi-tod-21</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-tod-22"></i>
+          <p title="\f01a" class="icon-name">wi-tod-22</p>
+        </button>
+      </article>
+      <article class="p-2">
+        <button class="icon-button p-3">
+          <i class="wi-tod-23"></i>
+          <p title="\f01b" class="icon-name">wi-tod-23</p>
+        </button>
+      </article>
+    </div>
+
+  </div>
+
+
+</body>
+</html>

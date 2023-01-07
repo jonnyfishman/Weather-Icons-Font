@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 30 30"
+   xml:space="preserve"
+   sodipodi:docname="barometer-b.svg"
+   inkscape:version="1.2.1 (9c6d41e4, 2022-07-14)"
+   inkscape:export-filename="ti-6.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   width="30"
+   height="30"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs134" /><sodipodi:namedview
+   id="namedview132"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   showgrid="true"
+   inkscape:zoom="10.886347"
+   inkscape:cx="16.304827"
+   inkscape:cy="18.784997"
+   inkscape:window-width="1280"
+   inkscape:window-height="687"
+   inkscape:window-x="0"
+   inkscape:window-y="23"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="g2566"
+   showguides="true"><inkscape:grid
+     type="xygrid"
+     id="grid726"
+     originx="0"
+     originy="0" /><sodipodi:guide
+     position="0.066666667,0.33333"
+     orientation="0,-1"
+     id="guide728"
+     inkscape:locked="false" /></sodipodi:namedview>
+
+<g
+   id="g2566"
+   style="stroke:none;fill:#000000"><g
+     id="g1904"
+     transform="matrix(1.1146142,0,0,1.1097339,-9.2163325,1.7407188)"
+     style="stroke-width:0.899142" /><path
+     id="ellipse5540"
+     style="fill:#000000;fill-opacity:0.979522;stroke:none;stroke-width:1.6;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+     d="M 15 9.5996094 A 0.40000001 0.40000001 0 0 0 14.599609 10 L 14.599609 19.841797 A 2.2 2.1999998 0 0 0 12.800781 22 A 2.2 2.1999998 0 0 0 15 24.199219 A 2.2 2.1999998 0 0 0 17.199219 22 A 2.2 2.1999998 0 0 0 15.400391 19.837891 L 15.400391 10 A 0.40000001 0.40000001 0 0 0 15 9.5996094 z " /></g></svg>

@@ -1,0 +1,626 @@
+:root {
+  --primary-color: black;
+  --secondary-color: white;
+  --second-color: yellow;
+  --third-color: #c2c2c2;
+  --fourth-color: #e74c3c;
+  --fifth-color: #3498db;
+}
+
+@font-face {
+  font-family: 'weather-icons';
+  src:  url('../fonts/weather-icons.eot');
+  src:  url('../fonts/weather-icons.eot#iefix') format('embedded-opentype'),
+    url('../fonts/weather-icons.ttf') format('truetype'),
+    url('../fonts/weather-icons.woff') format('woff'),
+    url('../fonts/weather-icons.svg#weather_icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="wi-"], [class*=" wi-"] {
+  font-family: 'weather-icons';
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size:inherit;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wi-multitone {
+  position:relative;
+}
+.wi-multitone:after, .wi-multitone > i, .wi-multitone > i:after {
+  position: absolute;
+  left:0;
+  bottom:0;
+  font-style: normal;
+}
+
+
+/* Colours */
+.wi-multitone:before {
+  color: var(--primary-color);
+}
+.wi-multitone:after {
+  color: var(--secondary-color);
+}
+.wi-white:before,
+.wi-moon, .wi-night,
+.wi-moon:after, .wi-night:after,
+[class*="wi-tod"] > i:before,
+[class*="-night"] > i {
+  color: var(--secondary-color);
+}
+.wi-yellow, .wi-sun, .wi-day,
+.wi-yellow > i:after, .wi-sun > i:after, .wi-day > i:after,
+.wi-yellow:after,
+[class*="-day"] > i,
+[class*="wi-tod"]:after {
+  color: var(--second-color);
+}
+.wi-grey,
+.wi-grey:after {
+  color: var(--third-color);
+}
+.wi-red,
+.wi-red:after {
+  color: var(--fourth-color);
+}
+.wi-blue, .wi-water,
+.wi-blue:after, .wi-water:after {
+  color: var(--fifth-color);
+}
+
+
+/* Special Icons */
+.wi-pressure:not(.wi-multitone):before {
+  content: "\f061"
+}
+.wi-pressure.wi-multitone:before {
+  content: "\f066";
+}
+.wi-pressure.wi-multitone > i:after {
+  content: "\f067";
+}
+.wi-pressure.wi-multitone:after {
+  content: "\f068";
+}
+/* */
+.wi-thermometer:not(.wi-multitone):before {
+  content: "\f060"
+}
+.wi-thermometer.wi-multitone:before {
+  content: "\f064";
+}
+.wi-thermometer.wi-multitone > i:after {
+  content: "\f065";
+}
+/* */
+.wi-edit:not(.wi-multitone):before {
+  content: "\f062"
+}
+.wi-edit.wi-multitone:before {
+  content: "\f069";
+}
+.wi-edit.wi-multitone > i:before {
+  content: "\f06b";
+}
+.wi-edit.wi-multitone:after {
+  content: "\f06a";
+}
+/* */
+.wi-arrow:not(.wi-multitone):before {
+  content: "\f063"
+}
+
+
+/* Weather Icons */
+.wi-clear-day:not(.wi-multitone):before {
+  content: "\f030"
+}
+.wi-clear-day.wi-multitone:before {
+  content: "\f03f";
+}
+.wi-clear-day.wi-multitone > i:before {
+  content: "\f03f";
+}
+.wi-clear-day.wi-multitone > i:after {
+  content: "\f04d";
+  opacity: 0.8;
+}
+/* */
+.wi-clear-night:not(.wi-multitone):before {
+  content: "\f03b"
+}
+.wi-clear-night.wi-multitone:before {
+  content: "\f03b";
+}
+.wi-clear-night.wi-multitone:after {
+  content: "\f03b";
+}
+/* */
+.wi-few-clouds-day:not(.wi-multitone):before {
+  content: "\f031"
+}
+.wi-few-clouds-day.wi-multitone:before {
+  content: "\f040";
+}
+.wi-few-clouds-day.wi-multitone > i:before {
+  content: "\f04e";
+}
+/* */
+.wi-few-clouds-night:not(.wi-multitone):before {
+  content: "\f03c"
+}
+.wi-few-clouds-night.wi-multitone:before {
+  content: "\f040";
+}
+.wi-few-clouds-night.wi-multitone:after {
+  content: "\f04f";
+}
+/* */
+.wi-scattered-clouds-day:not(.wi-multitone):before {
+  content: "\f032"
+}
+.wi-scattered-clouds-day.wi-multitone:before {
+  content: "\f046";
+}
+.wi-scattered-clouds-day.wi-multitone > i:before {
+  content: "\f04e";
+}
+.wi-scattered-clouds-day.wi-multitone:after {
+  content: "\f041";
+}
+/* */
+.wi-scattered-clouds-night:not(.wi-multitone):before {
+  content: "\f03d"
+}
+.wi-scattered-clouds-night.wi-multitone:before {
+  content: "\f046";
+}
+.wi-scattered-clouds-night.wi-multitone > i:before {
+  content: "\f04f";
+}
+.wi-scattered-clouds-night.wi-multitone:after {
+  content: "\f041";
+}
+/* */
+.wi-broken-clouds:not(.wi-multitone):before {
+  content: "\f034"
+}
+.wi-broken-clouds.wi-multitone:before {
+  content: "\f040";
+}
+.wi-broken-clouds.wi-multitone:after {
+  content: "\f047";
+}
+/* */
+.wi-shower-rain-day:not(.wi-multitone):before {
+    content: "\f035"
+}
+.wi-shower-rain-day.wi-multitone:before {
+  content: "\f042";
+}
+.wi-shower-rain-day.wi-multitone > i:before {
+  content: "\f04e";
+}
+.wi-shower-rain-day.wi-multitone:after {
+  content: "\f048";
+}
+/* */
+.wi-shower-rain-night:not(.wi-multitone):before {
+    content: "\f03e"
+}
+.wi-shower-rain-night.wi-multitone:before {
+  content: "\f042";
+}
+.wi-shower-rain-night.wi-multitone > i:before {
+  content: "\f04f";
+}
+.wi-shower-rain-night.wi-multitone:after {
+  content: "\f048";
+}
+/* */
+.wi-rain:not(.wi-multitone):before {
+    content: "\f036"
+}
+.wi-rain.wi-multitone:before {
+  content: "\f043";
+}
+.wi-rain.wi-multitone:after {
+  content: "\f049";
+}
+/* */
+.wi-thunderstorm:not(.wi-multitone):before {
+    content: "\f037"
+}
+.wi-thunderstorm.wi-multitone:before {
+  content: "\f043";
+}
+.wi-thunderstorm.wi-multitone:after {
+  content: "\f04a";
+}
+/* */
+.wi-snow:not(.wi-multitone):before {
+    content: "\f039"
+}
+.wi-snow.wi-multitone:before {
+  content: "\f044";
+}
+.wi-snow.wi-multitone:after {
+  content: "\f04b";
+}
+/* */
+.wi-mist:not(.wi-multitone):before {
+  content: "\f03a"
+}
+.wi-mist.wi-multitone:before {
+  content: "\f045";
+}
+.wi-mist.wi-multitone:after {
+  content: "\f04c";
+}
+
+/* Wind Icons */
+.wi-wind:not(.wi-multitone):before,
+.wi-wind-s:not(.wi-multitone):before {
+  content: "\f070"
+}
+.wi-wind.wi-multitone:before,
+.wi-wind-s.wi-multitone:before {
+  content: "\f080";
+}
+.wi-wind.wi-multitone > i:before,
+.wi-wind-s.wi-multitone > i:before {
+  content: "\f090";
+}
+/* */
+.wi-wind-sw:not(.wi-multitone):before {
+  content: "\f071"
+}
+.wi-wind-sw.wi-multitone:before {
+  content: "\f081";
+}
+.wi-wind-sw.wi-multitone > i:before {
+  content: "\f091";
+}
+/* */
+.wi-wind-w:not(.wi-multitone):before {
+  content: "\f072"
+}
+.wi-wind-w.wi-multitone:before {
+  content: "\f082";
+}
+.wi-wind-w.wi-multitone > i:before {
+  content: "\f092";
+}
+/* */
+.wi-wind-nw:not(.wi-multitone):before {
+  content: "\f073"
+}
+.wi-wind-nw.wi-multitone:before {
+  content: "\f083";
+}
+.wi-wind-nw.wi-multitone > i:before {
+  content: "\f093";
+}
+/* */
+.wi-wind-n:not(.wi-multitone):before {
+  content: "\f074"
+}
+.wi-wind-n.wi-multitone:before {
+  content: "\f084";
+}
+.wi-wind-n.wi-multitone > i:before {
+  content: "\f094";
+}
+/* */
+.wi-wind-ne:not(.wi-multitone):before {
+  content: "\f075"
+}
+.wi-wind-ne.wi-multitone:before {
+  content: "\f085";
+}
+.wi-wind-ne.wi-multitone > i:before {
+  content: "\f095";
+}
+/* */
+.wi-wind-e:not(.wi-multitone):before {
+  content: "\f076"
+}
+.wi-wind-e.wi-multitone:before {
+  content: "\f086";
+}
+.wi-wind-e.wi-multitone > i:before {
+  content: "\f096";
+}
+/* */
+.wi-wind-se:not(.wi-multitone):before {
+  content: "\f077"
+}
+.wi-wind-se.wi-multitone:before {
+  content: "\f087";
+}
+.wi-wind-se.wi-multitone > i:before {
+  content: "\f097";
+}
+/* */
+
+
+/* Time of Day */
+.wi-tod-0:not(.wi-multitone):before {
+  content: "\f000"
+}
+.wi-tod-0.wi-multitone:before {
+  content: "\f000";
+}
+/* */
+.wi-tod-1:not(.wi-multitone):before {
+  content: "\f001"
+}
+.wi-tod-1.wi-multitone:before {
+  content: "\f00c";
+}
+.wi-tod-1.wi-multitone:after {
+  content: "\f020";
+}
+/* */
+.wi-tod-2:not(.wi-multitone):before {
+  content: "\f002"
+}
+.wi-tod-2.wi-multitone:before {
+  content: "\f00c";
+}
+.wi-tod-2.wi-multitone:after {
+  content: "\f021";
+}
+/* */
+.wi-tod-3:not(.wi-multitone):before {
+  content: "\f003"
+}
+.wi-tod-3.wi-multitone:before {
+  content: "\f00c";
+}
+.wi-tod-3.wi-multitone:after {
+  content: "\f022";
+}
+/* */
+.wi-tod-4:not(.wi-multitone):before {
+  content: "\f004"
+}
+.wi-tod-4.wi-multitone:before {
+  content: "\f00c";
+}
+.wi-tod-4.wi-multitone:after {
+  content: "\f023";
+}
+/* */
+.wi-tod-5:not(.wi-multitone):before {
+  content: "\f005"
+}
+.wi-tod-5.wi-multitone:before {
+  content: "\f00c";
+}
+.wi-tod-5.wi-multitone:after {
+  content: "\f024";
+}
+/* */
+.wi-tod-6:not(.wi-multitone):before {
+  content: "\f006"
+}
+.wi-tod-6.wi-multitone:before {
+  content: "\f000";
+}
+.wi-tod-6.wi-multitone:after {
+  content: "\f024";
+}
+/* */
+.wi-tod-7:not(.wi-multitone):before {
+  content: "\f007"
+}
+.wi-tod-7.wi-multitone:before {
+  content: "\f00d";
+}
+.wi-tod-7.wi-multitone:after {
+  content: "\f024";
+}
+/* */
+.wi-tod-8:not(.wi-multitone):before {
+  content: "\f008"
+}
+.wi-tod-8.wi-multitone:before {
+  content: "\f00d";
+}
+.wi-tod-8.wi-multitone:after {
+  content: "\f023";
+}
+/* */
+.wi-tod-9:not(.wi-multitone):before {
+  content: "\f009"
+}
+.wi-tod-9.wi-multitone:before {
+  content: "\f00d";
+}
+.wi-tod-9.wi-multitone:after {
+  content: "\f022";
+}
+/* */
+.wi-tod-10:not(.wi-multitone):before {
+  content: "\f00a"
+}
+.wi-tod-10.wi-multitone:before {
+  content: "\f00d";
+}
+.wi-tod-10.wi-multitone:after {
+  content: "\f021";
+}
+/* */
+.wi-tod-11:not(.wi-multitone):before {
+  content: "\f00b"
+}
+.wi-tod-11.wi-multitone:before {
+  content: "\f00d";
+}
+.wi-tod-11.wi-multitone:after {
+  content: "\f020";
+}
+/* */
+.wi-tod-12:not(.wi-multitone):before {
+  content: "\f010"
+}
+.wi-tod-12.wi-multitone:before {
+  content: "\f00c";
+}
+.wi-tod-12.wi-multitone > i:before {
+  content: "\f00e";
+}
+/* */
+.wi-tod-13:not(.wi-multitone):before {
+  content: "\f011"
+}
+.wi-tod-13.wi-multitone:before {
+  content: "\f00c";
+}
+.wi-tod-13.wi-multitone > i:before {
+  content: "\f00e";
+}
+.wi-tod-13.wi-multitone:after {
+  content: "\f025";
+}
+/* */
+.wi-tod-14:not(.wi-multitone):before {
+  content: "\f012"
+}
+.wi-tod-14.wi-multitone:before {
+  content: "\f00c";
+}
+.wi-tod-14.wi-multitone > i:before {
+  content: "\f00e";
+}
+.wi-tod-14.wi-multitone:after {
+  content: "\f026";
+}
+/* */
+.wi-tod-15:not(.wi-multitone):before {
+  content: "\f013"
+}
+.wi-tod-15.wi-multitone:before {
+  content: "\f00c";
+}
+.wi-tod-15.wi-multitone > i:before {
+  content: "\f00e";
+}
+.wi-tod-15.wi-multitone:after {
+  content: "\f027";
+}
+/* */
+.wi-tod-16:not(.wi-multitone):before {
+  content: "\f014"
+}
+.wi-tod-16.wi-multitone:before {
+  content: "\f00c";
+}
+.wi-tod-16.wi-multitone > i:before {
+  content: "\f00e";
+}
+.wi-tod-16.wi-multitone:after {
+  content: "\f028";
+}
+/* */
+.wi-tod-17:not(.wi-multitone):before {
+  content: "\f015"
+}
+.wi-tod-17.wi-multitone:before {
+  content: "\f00c";
+}
+.wi-tod-17.wi-multitone > i:before {
+  content: "\f00e";
+}
+.wi-tod-17.wi-multitone:after {
+  content: "\f029";
+}
+/* */
+.wi-tod-18:not(.wi-multitone):before {
+  content: "\f016"
+}
+.wi-tod-18.wi-multitone:before {
+  content: "\f000";
+}
+.wi-tod-18.wi-multitone > i:before {
+  content: "\f00e";
+}
+.wi-tod-18.wi-multitone:after {
+  content: "\f029";
+}
+/* */
+.wi-tod-19:not(.wi-multitone):before {
+  content: "\f017"
+}
+.wi-tod-19.wi-multitone:before {
+  content: "\f00d";
+}
+.wi-tod-19.wi-multitone > i:before {
+  content: "\f00e";
+}
+.wi-tod-19.wi-multitone:after {
+  content: "\f029";
+}
+/* */
+.wi-tod-20:not(.wi-multitone):before {
+  content: "\f018"
+}
+.wi-tod-20.wi-multitone:before {
+  content: "\f00d";
+}
+.wi-tod-20.wi-multitone > i:before {
+  content: "\f00e";
+}
+.wi-tod-20.wi-multitone:after {
+  content: "\f028";
+}
+/* */
+.wi-tod-21:not(.wi-multitone):before {
+  content: "\f019"
+}
+.wi-tod-21.wi-multitone:before {
+  content: "\f00d";
+}
+.wi-tod-21.wi-multitone > i:before {
+  content: "\f00e";
+}
+.wi-tod-21.wi-multitone:after {
+  content: "\f027";
+}
+/* */
+.wi-tod-22:not(.wi-multitone):before {
+  content: "\f01a"
+}
+.wi-tod-22.wi-multitone:before {
+  content: "\f00d";
+}
+.wi-tod-22.wi-multitone > i:before {
+  content: "\f00e";
+}
+.wi-tod-22.wi-multitone:after {
+  content: "\f026";
+}
+/* */
+.wi-tod-23:not(.wi-multitone):before {
+  content: "\f01b"
+}
+.wi-tod-23.wi-multitone:before {
+  content: "\f00d";
+}
+.wi-tod-23.wi-multitone > i:before {
+  content: "\f00e";
+}
+.wi-tod-23.wi-multitone:after {
+  content: "\f025";
+}
