@@ -3,9 +3,9 @@ body {
   color:#000;
   background:#ccc;
 }
-hr {
-  border:none;
-  border-bottom: 1px solid white;
+p {
+  font-family: helvetica;
+font-weight: lighter;
 }
 
 button.close {
@@ -25,16 +25,6 @@ button.close {
   box-shadow: 0 0 0 .2rem rgba(108,117,125,.5);
 }
 
-.grid {
-
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 5px;
-}
-.grid article {
-
-}
-
 .icon-button {
   width: 100%;
   height:100%;
@@ -47,16 +37,14 @@ button.close {
   background:#183153;
   color:#f2f2f2;
 }
-.icon-button i {
+.icon-button i, .icon-button em {
   font-size: 400%;
 }
 .icon-name {
-
   font-size:70%;
   word-break: break-word;
   margin-bottom: 0;
   line-height:1;
-
 }
 
 .icon-card {
