@@ -32,47 +32,45 @@ This will display the few clouds day icon using the default primary colour (blac
 
 Included in the font are 12 weather icons:
 
-   `wi-clear-day`: Sunny day icon
-   `wi-few-clouds-day`: A sun and cloud icon
-   `wi-scattered-clouds-day`: A sun and multiple clouds
-   `wi-shower-rain-day`: Rain with a day icon
-   `wi-broken-clouds`: Two clouds icon
-   `wi-rain`: Rain icon
-   `wi-thunderstorm`: Thunderstorm icon
-   `wi-snow`: A snow icon
+   +`wi-clear-day`: Sunny day icon
+   +`wi-few-clouds-day`: A sun and cloud icon
+   +`wi-scattered-clouds-day`: A sun and multiple clouds
+   +`wi-shower-rain-day`: Rain with a day icon
+   +`wi-broken-clouds`: Two clouds icon
+   +`wi-rain`: Rain icon
+   +`wi-thunderstorm`: Thunderstorm icon
+   +`wi-snow`: A snow icon
 
 **All instances of `day` can be replaced with `night` for a moon icon**
 
 8 wind direction icons:
 
-    `wi-wind` plus direction i.e. `-n` or `-se`
+    +`wi-wind` plus direction i.e. `-n` or `-se`
 
 and 24 time of day icons:
 
-    `wi-tod-0` to `wi-tod-23`
+    +`wi-tod-0` to `wi-tod-23`
 
 ## Customization
 
 The colours of the icons can be easily customised by modifying `:root` code block in the CSS file. Simply specify your desired colours as the value of the colour property:
 
-    `
-    :root {
+    `:root {
       --primary-color: black;
       --secondary-color: white;
       --second-color: yellow;
       --third-color: #c2c2c2;
       --fourth-color: #f24236;
       --fifth-color: #3498db;
-    }
-    `
+    }`
 
 For simplicity these colours are matched with the following CSS tags:
-    `
-    wi-yellow = #ffff00
+
+    `wi-yellow = #ffff00
     wi-grey = #c2c2c2
     wi-red = #f24236
-    wi-blue = #3498db
-    `
+    wi-blue = #3498db`
+
 The order of the colours is important with `wi-yellow` being highest and `wi-blue` being the lowest. When combining multiple colours the first colour to be applied will always be the highest in the list.
 
 Fonts can be rotated using the `wi-rotate-*` where `*` is a whole number in degrees.
