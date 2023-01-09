@@ -45,7 +45,7 @@ Included in the font are 12 weather icons:
 
 8 wind direction icons:
 
-    + &nbsp;`wi-wind` plus direction i.e. `-n` or `-se`
++ `wi-wind` plus direction i.e. `-n` or `-se`
 
 and 24 time of day icons:
 
