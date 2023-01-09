@@ -12,7 +12,7 @@ To use the weather icons font in your project, you will need to include the foll
 
    + `css/weather-icons.min.css` This file contains the styles for the weather icons, including the classes for specifying the colours of the icons.
 
-   + The folder `fonts/` This is the actual font file for the weather icons and should be placed in the parent folder `../` from the CSS files.
+   + The folder `fonts/`. This is the actual font file for the weather icons and should be placed in the parent folder `../` from the CSS files.
 
 ## Usage
 
@@ -45,7 +45,7 @@ Included in the font are 12 weather icons:
 
 8 wind direction icons:
 
-    + `wi-wind` plus direction i.e. `-n` or `-se`
+    +`wi-wind` plus direction i.e. `-n` or `-se`
 
 and 24 time of day icons:
 
