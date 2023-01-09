@@ -45,37 +45,39 @@
 
 
 /* Colours */
-.wi-multitone:before {
+.wi-multitone:before,
+[class*="wi-tod"]:after,
+[class*="-night"]:not(.wi-yellow):not(.wi-grey):not(.wi-red):not(.wi-blue):not(.wi-white).wi-invert:after,
+[class*="-day"]:not(.wi-yellow):not(.wi-grey):not(.wi-red):not(.wi-blue):not(.wi-white).wi-invert:after {
   color: var(--primary-color);
 }
-.wi-multitone:after {
+.wi-multitone:after,
+[class*="wi-tod"] > i:after,
+.wi-invert:not([class*="-night"]):not([class*="-day"]):before,
+[class*="-day"].wi-invert:before,
+[class*="-night"].wi-invert:before {
   color: var(--secondary-color);
 }
-.wi-white:before,
-.wi-moon, .wi-night,
-.wi-moon:after, .wi-night:after,
-[class*="wi-tod"] > i:before,
-[class*="-night"] > i {
-  color: var(--secondary-color);
-}
-.wi-yellow, .wi-sun, .wi-day,
-.wi-yellow > i:after, .wi-sun > i:after, .wi-day > i:after,
-.wi-yellow:after,
-[class*="-day"] > i,
-[class*="wi-tod"]:after {
+.wi-yellow,
+.wi-yellow > i:after,
+.wi-yellow:after {
   color: var(--second-color);
 }
 .wi-grey,
-.wi-grey:after {
+.wi-grey:not(.wi-yellow):after {
   color: var(--third-color);
 }
 .wi-red,
-.wi-red:after {
+.wi-red:not(.wi-yellow):not(.wi-grey):after {
   color: var(--fourth-color);
 }
-.wi-blue, .wi-water,
-.wi-blue:after, .wi-water:after {
+.wi-blue,
+.wi-blue:not(.wi-yellow):not(.wi-grey):not(.wi-red):after {
   color: var(--fifth-color);
+}
+.wi-white,
+.wi-white:not(.wi-yellow):not(.wi-grey):not(.wi-red):not(.wi-blue):after {
+  color: var(--secondary-color);
 }
 
 
@@ -128,12 +130,12 @@
 .wi-clear-day.wi-multitone:before {
   content: "\f03f";
 }
-.wi-clear-day.wi-multitone > i:before {
-  content: "\f03f";
-}
 .wi-clear-day.wi-multitone > i:after {
   content: "\f04d";
   opacity: 0.8;
+}
+.wi-clear-day.wi-multitone:after {
+  content: "\f03f";
 }
 /* */
 .wi-clear-night:not(.wi-multitone):before {
@@ -152,7 +154,7 @@
 .wi-few-clouds-day.wi-multitone:before {
   content: "\f040";
 }
-.wi-few-clouds-day.wi-multitone > i:before {
+.wi-few-clouds-day.wi-multitone:after {
   content: "\f04e";
 }
 /* */
@@ -173,10 +175,10 @@
   content: "\f046";
 }
 .wi-scattered-clouds-day.wi-multitone > i:before {
-  content: "\f04e";
+  content: "\f041";
 }
 .wi-scattered-clouds-day.wi-multitone:after {
-  content: "\f041";
+  content: "\f04e";
 }
 /* */
 .wi-scattered-clouds-night:not(.wi-multitone):before {
@@ -186,10 +188,10 @@
   content: "\f046";
 }
 .wi-scattered-clouds-night.wi-multitone > i:before {
-  content: "\f04f";
+  content: "\f041";
 }
 .wi-scattered-clouds-night.wi-multitone:after {
-  content: "\f041";
+  content: "\f04f";
 }
 /* */
 .wi-broken-clouds:not(.wi-multitone):before {
@@ -209,10 +211,10 @@
   content: "\f042";
 }
 .wi-shower-rain-day.wi-multitone > i:before {
-  content: "\f04e";
+  content: "\f048";
 }
 .wi-shower-rain-day.wi-multitone:after {
-  content: "\f048";
+  content: "\f04e";
 }
 /* */
 .wi-shower-rain-night:not(.wi-multitone):before {
@@ -478,7 +480,7 @@
 .wi-tod-12.wi-multitone:before {
   content: "\f00c";
 }
-.wi-tod-12.wi-multitone > i:before {
+.wi-tod-12.wi-multitone:after {
   content: "\f00e";
 }
 /* */
@@ -489,10 +491,10 @@
   content: "\f00c";
 }
 .wi-tod-13.wi-multitone > i:before {
-  content: "\f00e";
+  content: "\f025";
 }
 .wi-tod-13.wi-multitone:after {
-  content: "\f025";
+  content: "\f00e";
 }
 /* */
 .wi-tod-14:not(.wi-multitone):before {
@@ -502,10 +504,10 @@
   content: "\f00c";
 }
 .wi-tod-14.wi-multitone > i:before {
-  content: "\f00e";
+  content: "\f026";
 }
 .wi-tod-14.wi-multitone:after {
-  content: "\f026";
+  content: "\f00e";
 }
 /* */
 .wi-tod-15:not(.wi-multitone):before {
@@ -515,10 +517,10 @@
   content: "\f00c";
 }
 .wi-tod-15.wi-multitone > i:before {
-  content: "\f00e";
+  content: "\f027";
 }
 .wi-tod-15.wi-multitone:after {
-  content: "\f027";
+  content: "\f00e";
 }
 /* */
 .wi-tod-16:not(.wi-multitone):before {
@@ -528,10 +530,10 @@
   content: "\f00c";
 }
 .wi-tod-16.wi-multitone > i:before {
-  content: "\f00e";
+  content: "\f028";
 }
 .wi-tod-16.wi-multitone:after {
-  content: "\f028";
+  content: "\f00e";
 }
 /* */
 .wi-tod-17:not(.wi-multitone):before {
@@ -541,10 +543,10 @@
   content: "\f00c";
 }
 .wi-tod-17.wi-multitone > i:before {
-  content: "\f00e";
+  content: "\f029";
 }
 .wi-tod-17.wi-multitone:after {
-  content: "\f029";
+  content: "\f00e";
 }
 /* */
 .wi-tod-18:not(.wi-multitone):before {
@@ -554,10 +556,10 @@
   content: "\f000";
 }
 .wi-tod-18.wi-multitone > i:before {
-  content: "\f00e";
+  content: "\f029";
 }
 .wi-tod-18.wi-multitone:after {
-  content: "\f029";
+  content: "\f00e";
 }
 /* */
 .wi-tod-19:not(.wi-multitone):before {
@@ -567,10 +569,10 @@
   content: "\f00d";
 }
 .wi-tod-19.wi-multitone > i:before {
-  content: "\f00e";
+  content: "\f029";
 }
 .wi-tod-19.wi-multitone:after {
-  content: "\f029";
+  content: "\f00e";
 }
 /* */
 .wi-tod-20:not(.wi-multitone):before {
@@ -580,10 +582,10 @@
   content: "\f00d";
 }
 .wi-tod-20.wi-multitone > i:before {
-  content: "\f00e";
+  content: "\f028";
 }
 .wi-tod-20.wi-multitone:after {
-  content: "\f028";
+  content: "\f00e";
 }
 /* */
 .wi-tod-21:not(.wi-multitone):before {
@@ -593,10 +595,10 @@
   content: "\f00d";
 }
 .wi-tod-21.wi-multitone > i:before {
-  content: "\f00e";
+  content: "\f027";
 }
 .wi-tod-21.wi-multitone:after {
-  content: "\f027";
+  content: "\f00e";
 }
 /* */
 .wi-tod-22:not(.wi-multitone):before {
@@ -606,10 +608,10 @@
   content: "\f00d";
 }
 .wi-tod-22.wi-multitone > i:before {
-  content: "\f00e";
+  content: "\f026";
 }
 .wi-tod-22.wi-multitone:after {
-  content: "\f026";
+  content: "\f00e";
 }
 /* */
 .wi-tod-23:not(.wi-multitone):before {
@@ -619,8 +621,8 @@
   content: "\f00d";
 }
 .wi-tod-23.wi-multitone > i:before {
-  content: "\f00e";
+  content: "\f025";
 }
 .wi-tod-23.wi-multitone:after {
-  content: "\f025";
+  content: "\f00e";
 }
