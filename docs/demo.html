@@ -22,9 +22,10 @@
         document.querySelectorAll("input.icon-colour").forEach((checkbox) => {
           checkbox.checked = false
         })
-        document.querySelector('.modal-title > h1').innerHTML = shortName
+        document.querySelector('.modal-title > h2').innerHTML = shortName
         document.querySelector('.modal-title > p').innerHTML = hexCode
-        document.querySelector('.icon-card').innerHTML = '<i class="wi-multitone ' + name  + '"><i></i></i>'
+        document.querySelector('.icon-card').innerHTML = '<i class="wi-multitone ' + name  + '"></i>'
+        if (button.dataset.special) document.querySelector('.icon-card > i').innerHTML = '<i></i>'
         if (button.dataset.default) {  console.log(button.dataset.default)
           button.dataset.default.replace(' ', '').split(',').forEach((iconClass, i) => {
             document.querySelector('.icon-card > i').classList.add(iconClass)
@@ -68,7 +69,7 @@
     // getting the text content that we want to copy
     const content = textarea.target.textContent;    // loading the content into our clipboard
     navigator.clipboard.writeText(content);
-})
+    })
 
   };
   </script>
@@ -76,7 +77,7 @@
 
 
 </head>
-<body>
+<body class="py-4">
   <!-- Modal -->
   <div class="modal fade" id="iconModal" tabindex="-1" role="dialog" aria-labelledby="iconModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -96,16 +97,13 @@
         </div>
         <div class="modal-body row m-2">
           <div class="col-12 modal-title d-flex justify-content-between">
-            <h1 id="iconModalLabel" title="Icon hex code"></h1>
+            <h2 id="iconModalLabel" title="Icon hex code"></h2>
             <p class="icon-hex-code pt-2" title="Icon hex code"></p>
           </div>
           <div class="col-6">
             <div class="icon-card p-4 d-flex flex-column align-items-center justify-content-center rounded"></div>
           </div>
           <div class="col-6 d-flex flex-column justify-content-start">
-            <div class="row mb-2 gx-0 justify-content-between">
-              <p>In order of precedence:</p>
-            </div>
           <div class="row mb-2 gx-0 justify-content-between">
             <span class="col-9  text-end">Yellow accents</span>
             <label class="switch bg-info col-3">
@@ -162,292 +160,366 @@
 
 
   <div class="container">
-    <h1>Weather Icons</h1>
-    <div class="grid">
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-yellow">
+    <h2>Colours</h2>
+    <p>The primary font colours are black and white with four other colours (<code>wi-yellow</code>, <code>wi-grey</code>, <code>wi-red</code>, <code>wi-blue</code>).</p>
+    <p>The order of the colours is important with <code>wi-yellow</code> being the highest and <code>wi-blue</code> being the lowest, so if multiple colour tags are included the highest in the order will always be shown. This is important for icons with multiple elements.</p>
+    <p>All colours can be adapted as needed by editing the first code block in <code>weather-icon.css</code>.</p>
+    <pre class="bg-dark text-white p-4 rounded">
+      <code>
+:root {
+  --primary-color: black;
+  --secondary-color: white;
+  --second-color: yellow;
+  --third-color: #c2c2c2;
+  --fourth-color: #f24236;
+  --fifth-color: #3498db;
+}</code>
+    </pre>
+    <h2>Weather Icons</h2>
+    <p>These icons are designed to match the <a href="https://openweathermap.org/weather-conditions">openweathermap</a> weather conditions.</p>
+    <div class="row mb-4">
+      <article class="p-2 col-3">
+        <button class="icon-button p-3" data-default="wi-yellow" data-special="true">
           <i class="wi-clear-day"></i>
           <p title="\f030" class="icon-name">wi-clear-day</p>
         </button>
       </article>
-      <article class="p-2">
+      <article class="p-2 col-3">
         <button class="icon-button p-3" data-default="wi-yellow">
           <i class="wi-few-clouds-day"></i>
           <p title="\f031" class="icon-name">wi-few-clouds-day</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-white, wi-yellow">
+      <article class="p-2 col-3">
+        <button class="icon-button p-3" data-default="wi-white, wi-yellow" data-special="true">
           <i class="wi-scattered-clouds-day"></i>
           <p title="\f032" class="icon-name">wi-scattered-clouds-day</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-yellow, wi-blue">
+      <article class="p-2 col-3">
+        <button class="icon-button p-3" data-default="wi-yellow, wi-blue" data-special="true">
           <i class="wi-shower-rain-day"></i>
           <p title="\f035" class="icon-name">wi-shower-rain-day</p>
         </button>
       </article>
-      <article class="p-2">
+      <article class="p-2 col-3">
         <button class="icon-button p-3">
           <i class="wi-clear-night"></i>
           <p title="\f03b" class="icon-name">wi-clear-night</p>
         </button>
       </article>
-      <article class="p-2">
+      <article class="p-2 col-3">
         <button class="icon-button p-3">
           <i class="wi-few-clouds-night"></i>
           <p title="\f03c" class="icon-name">wi-few-clouds-night</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-white">
+      <article class="p-2 col-3">
+        <button class="icon-button p-3" data-default="wi-white, wi-yellow" data-special="true">
           <i class="wi-scattered-clouds-night"></i>
           <p title="\f03d" class="icon-name">wi-scattered-clouds-night</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-white, wi-blue">
+      <article class="p-2 col-3">
+        <button class="icon-button p-3" data-default="wi-white, wi-blue" data-special="true">
           <i class="wi-shower-rain-night"></i>
           <p title="\f03e" class="icon-name">wi-shower-rain-night</p>
         </button>
       </article>
-      <article class="p-2">
+      <article class="p-2 col-3">
         <button class="icon-button p-3">
           <i class="wi-broken-clouds"></i>
           <p title="\f034" class="icon-name">wi-broken-clouds</p>
         </button>
       </article>
-      <article class="p-2">
+      <article class="p-2 col-3">
         <button class="icon-button p-3" data-default="wi-blue">
           <i class="wi-rain"></i>
           <p title="\f036" class="icon-name">wi-rain</p>
         </button>
       </article>
-      <article class="p-2">
+      <article class="p-2 col-3">
         <button class="icon-button p-3" data-default="wi-yellow">
           <i class="wi-thunderstorm"></i>
           <p title="\f037" class="icon-name">wi-thunderstorm</p>
         </button>
       </article>
-      <article class="p-2">
+      <article class="p-2 col-3">
         <button class="icon-button p-3">
           <i class="wi-snow"></i>
           <p title="\f039" class="icon-name">wi-snow</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-red, wi-white">
+      <article class="p-2 col-3">
+        <button class="icon-button p-3" data-default="wi-red, wi-white" data-special="true">
           <i class="wi-pressure"></i>
           <p title="\f060" class="icon-name">wi-pressure</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-red">
+      <article class="p-2 col-3">
+        <button class="icon-button p-3" data-default="wi-red" data-special="true">
           <i class="wi-thermometer"></i>
           <p title="\f061" class="icon-name">wi-thermometer</p>
         </button>
       </article>
     </div>
-    <h1>Wind Direction Icons</h1>
-    <div class="grid">
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-white">
+    <h2>Wind Direction Icons</h2>
+    <p>The wind direction icons represent the 8 cardinal directions with <code>wi-wind</code> being a substitute for <code>wi-wind-s</code>.</p>
+    <p>Specific angles can be created using the <code>wi-rotate-*</code> class.</p>
+    <table class="table table-light">
+      <thead>
+        <tr>
+          <th>Code</i></th>
+          <th>Icon</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>&lt;i class="wi-wind wi-rotate-37"&gt;&lt;/i&gt;</code></td>
+          <td><i class="wi-wind wi-rotate-37 fs-1"></i></td>
+          <td><p><code>37</code> equals 37 degrees<p></td>
+        </tr>
+        <tr>
+          <td><code>&lt;i class="wi-wind wi-spin"&gt;&lt;/i&gt;</code></td>
+          <td><i class="wi-wind wi-spin fs-1"></i></td>
+          <td><p>Spinning icons can be created</td>
+        </tr>
+        <tr>
+          <td><code>&lt;i class="wi-thermometer wi-rotate-180 wi-multitone wi-red"&gt;&lt;i&gt;&lt;/i&gt;&lt;/i&gt;</i></code></td>
+          <td><i class="wi-thermometer wi-rotate-180 wi-multitone wi-red fs-1"><i></i></i></td>
+          <td><p>Spin and rotation can be applied to any icon and are stackable with colours etc</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="row mb-4">
+      <article class="p-2 col-3">
+        <button class="icon-button p-3">
           <i class="wi-wind"></i>
           <p title="\f070" class="icon-name">wi-wind</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-white">
+      <article class="p-2 col-3">
+        <button class="icon-button p-3">
           <i class="wi-wind-sw"></i>
           <p title="\f071" class="icon-name">wi-wind-sw</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-white">
+      <article class="p-2 col-3">
+        <button class="icon-button p-3">
           <i class="wi-wind-w"></i>
           <p title="\f071" class="icon-name">wi-wind-w</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-white">
+      <article class="p-2 col-3">
+        <button class="icon-button p-3">
           <i class="wi-wind-nw"></i>
           <p title="\f073" class="icon-name">wi-wind-nw</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-white">
+      <article class="p-2 col-3">
+        <button class="icon-button p-3">
           <i class="wi-wind-n"></i>
           <p title="\f074" class="icon-name">wi-wind-n</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-white">
+      <article class="p-2 col-3">
+        <button class="icon-button p-3">
           <i class="wi-wind-ne"></i>
           <p title="\f075" class="icon-name">wi-wind-ne</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-white">
+      <article class="p-2 col-3">
+        <button class="icon-button p-3">
           <i class="wi-wind-e"></i>
           <p title="\f076" class="icon-name">wi-wind-e</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-white">
+      <article class="p-2 col-3">
+        <button class="icon-button p-3">
           <i class="wi-wind-se"></i>
           <p title="\f077" class="icon-name">wi-wind-se</p>
         </button>
       </article>
     </div>
-    <h1>Time of Day Icons</h1>
-    <div class="grid">
-      <article class="p-2">
+    <h2>Time of Day Icons</h2>
+    <p><code>wi-tod-0</code> is meant to represent the time preceding sunrise. <code>wi-tod-12</code> is meant to represent the time preceding moonrise.</p>
+    <div class="row mb-4">
+      <article class="p-2 col-3">
         <button class="icon-button p-3">
           <i class="wi-tod-0"></i>
           <p title="\f000" class="icon-name">wi-tod-0</p>
         </button>
       </article>
-      <article class="p-2">
+      <article class="p-2 col-3">
         <button class="icon-button p-3">
           <i class="wi-tod-1"></i>
           <p title="\f001" class="icon-name">wi-tod-1</p>
         </button>
       </article>
-      <article class="p-2">
+      <article class="p-2 col-3">
         <button class="icon-button p-3">
           <i class="wi-tod-2"></i>
           <p title="\f002" class="icon-name">wi-tod-2</p>
         </button>
       </article>
-      <article class="p-2">
+      <article class="p-2 col-3">
         <button class="icon-button p-3">
           <i class="wi-tod-3"></i>
           <p title="\f003" class="icon-name">wi-tod-3</p>
         </button>
       </article>
-      <article class="p-2">
+      <article class="p-2 col-3">
         <button class="icon-button p-3">
           <i class="wi-tod-4"></i>
           <p title="\f004" class="icon-name">wi-tod-4</p>
         </button>
       </article>
-      <article class="p-2">
+      <article class="p-2 col-3">
         <button class="icon-button p-3">
           <i class="wi-tod-5"></i>
           <p title="\f005" class="icon-name">wi-tod-5</p>
         </button>
       </article>
-      <article class="p-2">
+      <article class="p-2 col-3">
         <button class="icon-button p-3">
           <i class="wi-tod-6"></i>
           <p title="\f006" class="icon-name">wi-tod-6</p>
         </button>
       </article>
-      <article class="p-2">
+      <article class="p-2 col-3">
         <button class="icon-button p-3">
           <i class="wi-tod-7"></i>
           <p title="\f007" class="icon-name">wi-tod-7</p>
         </button>
       </article>
-      <article class="p-2">
+      <article class="p-2 col-3">
         <button class="icon-button p-3">
           <i class="wi-tod-8"></i>
           <p title="\f008" class="icon-name">wi-tod-8</p>
         </button>
       </article>
-      <article class="p-2">
+      <article class="p-2 col-3">
         <button class="icon-button p-3">
           <i class="wi-tod-9"></i>
           <p title="\f009" class="icon-name">wi-tod-9</p>
         </button>
       </article>
-      <article class="p-2">
+      <article class="p-2 col-3">
         <button class="icon-button p-3">
           <i class="wi-tod-10"></i>
           <p title="\f00a" class="icon-name">wi-tod-10</p>
         </button>
       </article>
-      <article class="p-2">
+      <article class="p-2 col-3">
         <button class="icon-button p-3">
           <i class="wi-tod-11"></i>
           <p title="\f00b" class="icon-name">wi-tod-11</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-white" >
+      <article class="p-2 col-3">
+        <button class="icon-button p-3" data-default="wi-white">
           <i class="wi-tod-12"></i>
           <p title="\f010" class="icon-name">wi-tod-12</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-white" >
+      <article class="p-2 col-3">
+        <button class="icon-button p-3" data-default="wi-white, wi-yellow" data-special="true">
           <i class="wi-tod-13"></i>
           <p title="\f011" class="icon-name">wi-tod-13</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-white" >
+      <article class="p-2 col-3">
+        <button class="icon-button p-3" data-default="wi-white, wi-yellow" data-special="true">
           <i class="wi-tod-14"></i>
           <p title="\f012" class="icon-name">wi-tod-14</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-white" >
+      <article class="p-2 col-3">
+        <button class="icon-button p-3" data-default="wi-white, wi-yellow" data-special="true">
           <i class="wi-tod-15"></i>
           <p title="\f013" class="icon-name">wi-tod-15</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-white" >
+      <article class="p-2 col-3">
+        <button class="icon-button p-3" data-default="wi-white, wi-yellow" data-special="true">
           <i class="wi-tod-16"></i>
           <p title="\f014" class="icon-name">wi-tod-16</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-white" >
+      <article class="p-2 col-3">
+        <button class="icon-button p-3" data-default="wi-white, wi-yellow" data-special="true">
           <i class="wi-tod-17"></i>
           <p title="\f015" class="icon-name">wi-tod-17</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-white" >
+      <article class="p-2 col-3">
+        <button class="icon-button p-3" data-default="wi-white, wi-yellow" data-special="true">
           <i class="wi-tod-18"></i>
           <p title="\f016" class="icon-name">wi-tod-18</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-white" >
+      <article class="p-2 col-3">
+        <button class="icon-button p-3" data-default="wi-white, wi-yellow" data-special="true">
           <i class="wi-tod-19"></i>
           <p title="\f017" class="icon-name">wi-tod-19</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-white" >
+      <article class="p-2 col-3">
+        <button class="icon-button p-3" data-default="wi-white, wi-yellow" data-special="true">
           <i class="wi-tod-20"></i>
           <p title="\f018" class="icon-name">wi-tod-20</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-white" >
+      <article class="p-2 col-3">
+        <button class="icon-button p-3" data-default="wi-white, wi-yellow" data-special="true">
           <i class="wi-tod-21"></i>
           <p title="\f019" class="icon-name">wi-tod-21</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-white" >
+      <article class="p-2 col-3">
+        <button class="icon-button p-3" data-default="wi-white, wi-yellow" data-special="true">
           <i class="wi-tod-22"></i>
           <p title="\f01a" class="icon-name">wi-tod-22</p>
         </button>
       </article>
-      <article class="p-2">
-        <button class="icon-button p-3" data-default="wi-white" >
+      <article class="p-2 col-3">
+        <button class="icon-button p-3" data-default="wi-white, wi-yellow" data-special="true">
           <i class="wi-tod-23"></i>
           <p title="\f01b" class="icon-name">wi-tod-23</p>
         </button>
       </article>
     </div>
-
+    <h2>Notes</h2>
+    <p>This font pack is designed to be used with the <code>&lt;em&gt;</code> and <code>&lt;i&gt;</code> script tags.</p>
+    <p>Icons with three coloured elements require an extra <code>&lt;i&gt;&lt;/i&gt;</code> tag for the third element to show. For example:
+    <table class="table table-light">
+      <thead>
+        <tr>
+          <th>Code</i></th>
+          <th>Icon</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>&lt;i class="wi-scattered-clouds-day"&gt;&lt;/i&gt;</code></td>
+          <td><i class="wi-scattered-clouds-day fs-1"></i></td>
+          <td>single icon <p>no extra tags required</p></td>
+        </tr>
+        <tr>
+          <td><code>&lt;i class="wi-scattered-clouds-day wi-multitone"&gt;&lt;/i&gt;</code></td>
+          <td><i class="wi-scattered-clouds-day wi-multitone wi-black fs-1"></i></td>
+          <td>three element icon <p>missing element from the missing extra tag</p></td>
+        </tr>
+        <tr>
+          <td><code>&lt;i class="wi-scattered-clouds-day wi-multitone"&gt;&lt;i&gt;&lt;/i&gt;&lt;/i&gt;</i></code></td>
+          <td><i class="wi-scattered-clouds-day wi-multitone wi-black fs-1"><i></i></i></td>
+          <td>three element icon <p>extra tag to allow missing element to show</p></td>
+        </tr>
+      </tbody>
+    </table>
+    <i>N.b There is currently no two colour fallback, so the third element is omitted.</i>
   </div>
 
 
