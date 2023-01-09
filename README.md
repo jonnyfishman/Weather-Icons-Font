@@ -10,9 +10,9 @@ Demo the fonts and the colour functions at [https://jonnyfishman.github.io/](htt
 
 To use the weather icons font in your project, you will need to include the following files in your project:
 
-   `css/weather-icons.min.css` This file contains the styles for the weather icons, including the classes for specifying the colours of the icons.
+   + `css/weather-icons.min.css` This file contains the styles for the weather icons, including the classes for specifying the colours of the icons.
 
-   The folder `fonts/` This is the actual font file for the weather icons and should be placed in the parent folder `../` from the CSS files.
+   + The folder `fonts/` This is the actual font file for the weather icons and should be placed in the parent folder `../` from the CSS files.
 
 ## Usage
 
@@ -32,24 +32,24 @@ This will display the few clouds day icon using the default primary colour (blac
 
 Included in the font are 12 weather icons:
 
-   +`wi-clear-day`: Sunny day icon
-   +`wi-few-clouds-day`: A sun and cloud icon
-   +`wi-scattered-clouds-day`: A sun and multiple clouds
-   +`wi-shower-rain-day`: Rain with a day icon
-   +`wi-broken-clouds`: Two clouds icon
-   +`wi-rain`: Rain icon
-   +`wi-thunderstorm`: Thunderstorm icon
-   +`wi-snow`: A snow icon
+   + `wi-clear-day`: Sunny day icon
+   + `wi-few-clouds-day`: A sun and cloud icon
+   + `wi-scattered-clouds-day`: A sun and multiple clouds
+   + `wi-shower-rain-day`: Rain with a day icon
+   + `wi-broken-clouds`: Two clouds icon
+   + `wi-rain`: Rain icon
+   + `wi-thunderstorm`: Thunderstorm icon
+   + `wi-snow`: A snow icon
 
 **All instances of `day` can be replaced with `night` for a moon icon**
 
 8 wind direction icons:
 
-    +`wi-wind` plus direction i.e. `-n` or `-se`
+    + `wi-wind` plus direction i.e. `-n` or `-se`
 
 and 24 time of day icons:
 
-    +`wi-tod-0` to `wi-tod-23`
+    + `wi-tod-0` to `wi-tod-23`
 
 ## Customization
 
