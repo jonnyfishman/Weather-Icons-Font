@@ -30,7 +30,7 @@ This will display the few clouds day icon using the default primary colour (blac
 
 ## Available Icons
 
-Included in the font are 12 weather icons:
+Included in the font are 12 weather icons (view them here [https://jonnyfishman.github.io/](https://jonnyfishman.github.io/)):
 
 + `wi-clear-day`: Sunny day icon
 + `wi-few-clouds-day`: A sun and cloud icon
@@ -41,7 +41,7 @@ Included in the font are 12 weather icons:
 + `wi-thunderstorm`: Thunderstorm icon
 + `wi-snow`: A snow icon
 
-**All instances of `day` can be replaced with `night` for a moon icon**
+*All instances of `day` can be replaced with `night` for a moon icon*
 
 8 wind direction icons:
 
@@ -58,7 +58,7 @@ The colours of the icons can be easily customised by modifying `:root` code bloc
     :root {
       --primary-color: black;
       --secondary-color: white;
-      --second-color: yellow;
+      --second-color: #ffff00;
       --third-color: #c2c2c2;
       --fourth-color: #f24236;
       --fifth-color: #3498db;
@@ -76,7 +76,11 @@ The order of the colours is important with `wi-yellow` being highest and `wi-blu
 Fonts can be rotated using the `wi-rotate-*` where `*` is a whole number in degrees.
 
 ## Acknowledgments
+I created this project after using [Erik Flower's](https://github.com/erikflowers/weather-icons) superb weather icons for a different project and wanted to add some extra colour options. His work was a great help in putting together this project.
+After making the SVGs for each icon they were turned into fonts using [Icoomoon](https://icomoon.io/app/#/select) which is a really helpful website for making custom fonts.
 
-## License
+## Licensing
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+* Weather Icons licensed under [SIL OFL 1.1](http://scripts.sil.org/OFL)
+* Code licensed under [MIT License](http://opensource.org/licenses/mit-license.html)
+* Documentation licensed under [CC BY 3.0](http://creativecommons.org/licenses/by/3.0)
