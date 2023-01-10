@@ -1,3 +1,5 @@
+![Icon Banner Image](docs/images/banner.png)
+
 # Weather Icons Font
 
 ## Custom CSS Weather Icons Font with Dualtone Capabilities
