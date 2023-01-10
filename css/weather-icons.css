@@ -200,7 +200,7 @@
 .wi-scattered-clouds-night.wi-multitone:before {
   content: "\f046";
 }
-.wi-scattered-clouds-night.wi-multitone > i:before
+.wi-scattered-clouds-night.wi-multitone > i:before,
 .wi-scattered-clouds-night.wi-multitone > em:before {
   content: "\f041";
 }
