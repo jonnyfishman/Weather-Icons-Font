@@ -1,7 +1,5 @@
 ![Icon Banner Image](docs/images/banner.png)
 
-# Weather Icons Font
-
 ## Custom CSS Weather Icons Font with Dualtone Capabilities
 
 This project provides a custom font that includes a set of weather icons with dualtone capabilities, meaning that each icon can be displayed in two different colours. The icons can be easily customised and incorporated into any web project through simple CSS classes.
@@ -22,13 +20,13 @@ To use a weather icon in your project, simply include the appropriate class in a
 
 `<i class="wi-few-clouds-day"></i>`
 
-This will display the few clouds day icon.
+This will display the few clouds day icon ![wi-few-clouds-day](docs/images/few_clouds.png).
 
 To specify the colours of the icon, you must include the class `wi-multiline` along with one or more colour class, like so:
 
 `<i class="wi-few-clouds-day wi-multitone wi-yellow"></i>`
 
-This will display the few clouds day icon using the default primary colour (black) for the first part of the icon and yellow for the second part.
+This will display the few clouds day icon using the default primary colour (black) for the first part of the icon and yellow for the second part ![wi-few-clouds-day-multitone](docs/images/few_clouds_yellow.png).
 
 ## Available Icons
 
