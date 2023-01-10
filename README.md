@@ -1,8 +1,8 @@
 ![Icon Banner Image](docs/images/banner.png)
 
-## Custom CSS Weather Icons Font with Dualtone Capabilities
+## Custom CSS Weather Icons Font with Multicolour Capabilities
 
-This project provides a custom font that includes a set of weather icons with dualtone capabilities, meaning that each icon can be displayed in two different colours. The icons can be easily customised and incorporated into any web project through simple CSS classes.
+This project provides a custom font that includes a set of weather icons with Multicolour capabilities, meaning that each icon can be displayed in different colours. The icons can be easily customised and incorporated into any web project through simple CSS classes.
 
 Demo the fonts and the colour functions at [https://jonnyfishman.github.io/](https://jonnyfishman.github.io/)!
 
@@ -12,7 +12,7 @@ To use the weather icons font in your project, you will need to include the foll
 
    + `css/weather-icons.min.css` This file contains the styles for the weather icons, including the classes for specifying the colours of the icons.
 
-   + The folder `fonts/`. This is the actual font file for the weather icons and should be placed in the parent folder `../` from the CSS files.
+   + The folder `fonts/`. These re the actual font files for the weather icons and should be placed in the parent folder `../` from the CSS files.
 
 ## Usage
 
@@ -76,8 +76,8 @@ The order of the colours is important with `wi-yellow` being highest and `wi-blu
 Fonts can be rotated using the `wi-rotate-*` where `*` is a whole number in degrees.
 
 ## Acknowledgments
-I created this project after using [Erik Flower's](https://github.com/erikflowers/weather-icons) superb weather icons for a different project and wanted to add some extra colour options. His work was a great help in putting together this project.
-After making the SVGs for each icon they were turned into fonts using [Icoomoon](https://icomoon.io/app/#/select) which is a really helpful website for making custom fonts.
++ I created this project after using [Erik Flower's](https://github.com/erikflowers/weather-icons) superb weather icons for a different project and wanted to add some extra colour options. His work was a great help in putting together this project.
++ After making the SVGs for each icon they were turned into fonts using [Icoomoon](https://icomoon.io/app/#/select) which is a really helpful website for making custom fonts.
 
 ## Licensing
 
